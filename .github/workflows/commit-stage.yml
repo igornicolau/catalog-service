@@ -1,11 +1,9 @@
 name: Commit Stage
-on:
-  push:
-    branches: [ "main" ]
+on: push
 
 jobs:
   build:
-    name: Build and Tests
+    name: Build and Test
     runs-on: ubuntu-22.04
     permissions:
       contents: read
@@ -16,8 +14,8 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
-          java-version: '17'
+          distribution: temurin
+          java-version: 17
           cache: gradle
       - name: Code vulnerability scanning
         uses: anchore/scan-action@v3
