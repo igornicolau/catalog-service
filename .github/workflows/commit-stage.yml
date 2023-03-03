@@ -1,8 +1,7 @@
 name: Commit Stage
 on:
   push:
-    branches:
-     - main
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -17,8 +16,8 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          distribution: temurin
-          java-version: 17
+          distribution: 'temurin'
+          java-version: '17'
           cache: gradle
       - name: Code vulnerability scanning
         uses: anchore/scan-action@v3
